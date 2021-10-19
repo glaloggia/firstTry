@@ -8,19 +8,23 @@ import java.util.ArrayList;
 public class ShapesManager {
     private ArrayList<Shape> shapes;
 
-// This is an example of how to create a basic window.
-//    public static void main(String[] args) {
-//        JFrame ventana = new JFrame();
-//        JPanel panel = new JPanel();
-//        ventana.add(panel);
-//        ventana.setTitle("hola");
-//        ventana.setVisible(true);
-//        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        ventana.setSize(Consts.FRAME_WIDTH, Consts.FRAME_HEIGHT);
-//    }
+    public boolean isDisplayNames() {
+        return displayNames;
+    }
+
+    public void setDisplayNames(boolean displayNames) {
+        this.displayNames = displayNames;
+    }
+
+    public ArrayList<Shape> getShapes() {
+        return shapes;
+    }
+
+    private boolean displayNames;
 
     public ShapesManager(){
         shapes = new ArrayList<>();
+        displayNames = false;
     }
 
     public void drawShapes(Graphics g){

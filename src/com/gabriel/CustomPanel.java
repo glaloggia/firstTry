@@ -2,6 +2,8 @@ package com.gabriel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * This allows us to create a panel which we can add to a frame/window
@@ -18,6 +20,14 @@ public class CustomPanel extends JPanel {
 
     public CustomPanel(ShapesManager shapesManager){
         this.shapesManager = shapesManager;
+        addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                System.out.println(e.toString());
+            }
+        });
     }
 
     @Override
