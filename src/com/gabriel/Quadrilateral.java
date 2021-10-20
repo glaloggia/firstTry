@@ -81,7 +81,7 @@ public class Quadrilateral extends Shape implements Rotatable{
         }else{
             g.drawPolygon(puntosX,puntosY,4);
         }
-        g.setColor(Color.red);
+        g.setColor(Color.black);
 
         g.drawPolygon(new int[]{boundingBox.getBottomLeft().getX(),boundingBox.getBottomLeft().getX(),boundingBox.getTopRight().getX(),boundingBox.getTopRight().getX()},
                 new int[]{boundingBox.getBottomLeft().getY(),boundingBox.getTopRight().getY(),boundingBox.getTopRight().getY(),boundingBox.getBottomLeft().getY()},4);

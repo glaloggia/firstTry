@@ -23,7 +23,7 @@ public class Rectangle extends Shape{
     }
 
     public Rectangle(int x, int y, int width, int height, Color color,boolean isFilled) {
-        super(x,y,color,isFilled,new BoundingBox(new Point(x,y),new Point(x+width,y+height)));
+        super(x,y,color,isFilled,new BoundingBox(new Point(x-width/2,y-height/2),new Point(x+width/2,y+height/2)));
         this.width = width;
         this.height = height;
     }
@@ -35,8 +35,10 @@ public class Rectangle extends Shape{
         if (super.isFilled){
             g.fillRect(xCenter-width/2,yCenter-height/2, this.width,this.height);
         }else{
-            g.drawRect(xCenter,yCenter, this.width,this.height);
+            g.drawRect(xCenter-width/2,yCenter-height/2, this.width,this.height);
         }
+        g.setColor(Color.black);
+        g.drawRect(boundingBox.getBottomLeft().getX(),boundingBox.getBottomLeft().getY(),boundingBox.getTopRight().getX()-boundingBox.getBottomLeft().getX(),boundingBox.getTopRight().getY()-boundingBox.getBottomLeft().getY());
     }
 
     @Override

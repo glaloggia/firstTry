@@ -4,16 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
-/**
- * This allows us to create a panel which we can add to a frame/window
- * Oftentimes, you would then add standard GUI components, e.g. JButton, JLabel, to the
- * panel.
- * In our case, though, we will want to draw shapes, so we override the paintComponent() method
- * that we inherit from the javax.swing.JPanel class.
- * The graphics system passes us a java.awt.Graphics object and this has methods which allows us
- * to draw shapes.
- */
 public class CustomPanel extends JPanel {
 
     private ShapesManager shapesManager;
@@ -25,9 +17,21 @@ public class CustomPanel extends JPanel {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                System.out.println(e.toString());
+                if(e.getButton()==1)
+                    primaryButtonClick(e);
+                if(e.getButton()==3)
+                    secondaryButtonClick(e);
             }
         });
+    }
+
+    private void secondaryButtonClick(MouseEvent e) {
+        System.out.println("Botón secundario");
+    }
+
+    private void primaryButtonClick(MouseEvent e){
+        shapesManager.toggleFilling(e);
+        super.repaint();
     }
 
     @Override

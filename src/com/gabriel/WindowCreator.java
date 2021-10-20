@@ -14,8 +14,8 @@ public class WindowCreator {
         Circle circle = new Circle(0,0,50,Color.BLUE,true);
         shapesManager.addShape(circle);
 
-//        Circle circle2 = new Circle(320,240,50,Color.yellow,true);
-//        shapesManager.addShape(circle2);
+        Circle circle2 = new Circle(320,240,50,Color.yellow,true);
+        shapesManager.addShape(circle2);
 
         Square square = new Square(175,25,50,Color.black,true);
         shapesManager.addShape(square);
