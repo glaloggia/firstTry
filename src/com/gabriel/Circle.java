@@ -34,7 +34,12 @@ public class Circle extends Shape{
         g.setColor(Color.black);
         g.drawRect(boundingBox.getBottomLeft().getX(),boundingBox.getBottomLeft().getY(),radius*2,radius*2);
         g.setColor(Color.black);
-        g.drawString(this.toString(),this.xCenter,this.yCenter);
+        g.drawString(this.toString(),this.xCenter-radius,this.yCenter-radius);
+    }
+
+    @Override
+    public void moveOrRotate() {
+        
     }
 
     public String toString(){

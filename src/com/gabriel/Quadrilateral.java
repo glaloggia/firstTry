@@ -89,6 +89,11 @@ public class Quadrilateral extends Shape implements Rotatable{
     }
 
     @Override
+    public void moveOrRotate() {
+        rotateNinetyDegrees();
+    }
+
+    @Override
     public void rotateNinetyDegrees() {
 
     }

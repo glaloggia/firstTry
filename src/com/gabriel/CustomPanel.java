@@ -26,7 +26,8 @@ public class CustomPanel extends JPanel {
     }
 
     private void secondaryButtonClick(MouseEvent e) {
-        System.out.println("Botón secundario");
+        shapesManager.moveOrRotate(e);
+        super.repaint();
     }
 
     private void primaryButtonClick(MouseEvent e){

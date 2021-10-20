@@ -63,4 +63,9 @@ public class ShapesManager {
                 (boundingBox.getBottomLeft().getY() < point.getY()) && (point.getY() < boundingBox.getTopRight().getY());
     }
 
+    public void moveOrRotate(MouseEvent e) {
+        for (Shape shape:getIntersectingShapes(e)) {
+            shape.moveOrRotate();
+        }
+    }
 }

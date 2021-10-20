@@ -2,7 +2,7 @@ package com.gabriel;
 
 import java.awt.*;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Moveable{
     protected int width;
     protected int height;
 
@@ -42,7 +42,18 @@ public class Rectangle extends Shape{
     }
 
     @Override
+    public void moveOrRotate() {
+        moveTenUnits();
+    }
+
+    @Override
     public String toString() {
         return "Rectangle";
+    }
+
+    @Override
+    public void moveTenUnits() {
+        xCenter = xCenter + 10;
+        setBoundingBox(new BoundingBox(new Point(xCenter-width/2,yCenter-height/2),new Point(xCenter+width/2,yCenter+height/2)));
     }
 }
