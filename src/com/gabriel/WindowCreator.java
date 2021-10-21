@@ -23,7 +23,7 @@ public class WindowCreator {
 //        Quadrilateral quadrilateral = new Quadrilateral(rectangle);
 //        shapesManager.addShape(quadrilateral);
 
-        Quadrilateral quadrilateral2 = new Quadrilateral(new Point(320,240),new Point(250,170),new Point(420,140),new Point(390,310),new Point(220,340));
+        Quadrilateral quadrilateral2 = new Quadrilateral(new Point(320,240),new Point(200,170),new Point(420,140),new Point(390,310),new Point(220,340));
         shapesManager.addShape(quadrilateral2);
 
         CustomWindow customWindow = new CustomWindow(shapesManager);

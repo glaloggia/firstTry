@@ -1,6 +1,8 @@
 package com.gabriel;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Quadrilateral extends Shape implements Rotatable{
 
@@ -95,7 +97,64 @@ public class Quadrilateral extends Shape implements Rotatable{
 
     @Override
     public void rotateNinetyDegrees() {
+        Point[] boundingBoxPoints;
 
+        for (Point point:points) {
+            normalize(point);
+            rotate(point);
+            denormalize(point);
+        }
+
+        boundingBoxPoints = convertBoundingBox(boundingBox);
+
+        for (Point point:boundingBoxPoints) {
+            normalize(point);
+            rotate(point);
+            denormalize(point);
+        }
+
+        boundingBox = calculateBB(boundingBoxPoints);
+
+    }
+
+    private Point[] convertBoundingBox(BoundingBox boundingBox) {
+
+        Point bLeft, tRight, tPoint;
+
+        Point[] converted = new Point[4];
+
+        bLeft = boundingBox.getBottomLeft();
+        tRight = boundingBox.getTopRight();
+
+        tPoint = new Point(bLeft.getX(), bLeft.getY());
+        converted[0]=tPoint;
+        tPoint = new Point(bLeft.getX(), tRight.getY());
+        converted[1]=tPoint;
+        tPoint = new Point(tRight.getX(), tRight.getY());
+        converted[2]=tPoint;
+        tPoint = new Point(tRight.getX(), bLeft.getY());
+        converted[3]=tPoint;
+
+        return converted;
+
+    }
+
+    private void denormalize(Point point) {
+        point.setX(point.getX()+xCenter);
+        point.setY(point.getY()+yCenter);
+    }
+
+    private void rotate(Point point) {
+        int auxX = point.getX();
+        int auxY = point.getY();
+
+        point.setX(-1* auxY);
+        point.setY(auxX);
+    }
+
+    private void normalize(Point point) {
+        point.setX(point.getX()-xCenter);
+        point.setY(point.getY()-yCenter);
     }
 
     @Override
