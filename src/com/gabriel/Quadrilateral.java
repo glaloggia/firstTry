@@ -78,16 +78,12 @@ public class Quadrilateral extends Shape implements Rotatable{
         int[] puntosX = {this.points[0].getX(),this.points[1].getX(),this.points[2].getX(),this.points[3].getX()};
         int[] puntosY = {this.points[0].getY(),this.points[1].getY(),this.points[2].getY(),this.points[3].getY()};
 
+        g.setColor(super.color);
         if (super.isFilled) {
             g.fillPolygon(puntosX,puntosY,4);
         }else{
             g.drawPolygon(puntosX,puntosY,4);
         }
-        g.setColor(Color.black);
-
-        g.drawPolygon(new int[]{boundingBox.getBottomLeft().getX(),boundingBox.getBottomLeft().getX(),boundingBox.getTopRight().getX(),boundingBox.getTopRight().getX()},
-                new int[]{boundingBox.getBottomLeft().getY(),boundingBox.getTopRight().getY(),boundingBox.getTopRight().getY(),boundingBox.getBottomLeft().getY()},4);
-
     }
 
     @Override

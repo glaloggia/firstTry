@@ -4,12 +4,6 @@ package com.gabriel;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * We can think of a JFrame as a window
- * By extending (inheriting from) the class javax.swing.JFrame we can
- * define what goes into our window - in this case a single JPanel which is
- * a component container for GUI elements.
- */
 public class CustomWindow extends JFrame {
 
     private CustomPanel mainPanel;

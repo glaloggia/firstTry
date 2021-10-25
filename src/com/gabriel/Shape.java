@@ -63,4 +63,14 @@ public abstract class Shape {
     }
 
     public abstract void moveOrRotate();
-} 
+
+    public void displayName(Graphics g) {
+        g.setColor(Color.black);
+        g.drawString(this.toString(),this.getBoundingBox().getBottomLeft().getX(),this.boundingBox.getBottomLeft().getY());
+    }
+
+    public void displayBoundingBox(Graphics g) {
+        g.setColor(Color.black);
+        g.drawRect(boundingBox.getBottomLeft().getX(),boundingBox.getBottomLeft().getY(),boundingBox.getTopRight().getX()-boundingBox.getBottomLeft().getX(),boundingBox.getTopRight().getY()-boundingBox.getBottomLeft().getY());
+    }
+}

@@ -37,8 +37,6 @@ public class Rectangle extends Shape implements Moveable{
         }else{
             g.drawRect(xCenter-width/2,yCenter-height/2, this.width,this.height);
         }
-        g.setColor(Color.black);
-        g.drawRect(boundingBox.getBottomLeft().getX(),boundingBox.getBottomLeft().getY(),boundingBox.getTopRight().getX()-boundingBox.getBottomLeft().getX(),boundingBox.getTopRight().getY()-boundingBox.getBottomLeft().getY());
     }
 
     @Override

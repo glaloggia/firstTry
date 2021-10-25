@@ -1,13 +1,25 @@
 package com.gabriel;
 
-import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ShapesManager {
+
     private ArrayList<Shape> shapes;
+    private boolean displayBoundingBoxes;
+    private boolean displayNames;
+
+    public ShapesManager(){
+        shapes = new ArrayList<>();
+        displayNames = false;
+        displayBoundingBoxes = false;
+    }
+
+    public boolean isDisplayBoundingBoxes() {
+        return displayBoundingBoxes;
+    }
 
     public boolean isDisplayNames() {
         return displayNames;
@@ -21,17 +33,14 @@ public class ShapesManager {
         return shapes;
     }
 
-    private boolean displayNames;
 
-    public ShapesManager(){
-        shapes = new ArrayList<>();
-        displayNames = false;
-    }
 
     public void drawShapes(Graphics g){
 
         for(Shape shape:this.shapes){
             shape.drawShape(g);
+            if(isDisplayNames()) shape.displayName(g);
+            if(isDisplayBoundingBoxes()) shape.displayBoundingBox(g);
         }
 
     }
@@ -67,5 +76,9 @@ public class ShapesManager {
         for (Shape shape:getIntersectingShapes(e)) {
             shape.moveOrRotate();
         }
+    }
+
+    public void setDisplayBoundingBoxes(boolean displayBoundingBoxes) {
+        this.displayBoundingBoxes = displayBoundingBoxes;
     }
 }
