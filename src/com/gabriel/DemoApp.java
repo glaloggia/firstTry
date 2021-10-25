@@ -3,7 +3,11 @@ package com.gabriel;
 import javax.swing.*;
 import java.awt.*;
 
-public class WindowCreator {
+/**
+ * DemoApp is an example that uses all the classes developed for this assignment.
+ * @author Gabriel La Loggia - L00169720
+ */
+public class DemoApp {
     public static void main(String[] args) {
 
         ShapesManager shapesManager = new ShapesManager();
@@ -20,7 +24,7 @@ public class WindowCreator {
         Rectangle rectangle1 = new Rectangle(150,85,150,75, Color.blue,true);
         shapesManager.addShape(rectangle1);
 
-        Quadrilateral quadrilateral1 = new Quadrilateral(new Point(320,250),new Point(200,180),new Point(420,250),new Point(390,320),new Point(220,350));
+        Quadrilateral quadrilateral1 = new Quadrilateral(new Point(320,250),new Point(200,180),new Point(420,250),new Point(390,320),new Point(220,350),Color.orange);
         shapesManager.addShape(quadrilateral1);
 
         Rectangle rectangle2 = new Rectangle(600,275,100,50, Color.pink,true);

@@ -12,9 +12,22 @@ public class Quadrilateral extends Shape implements Rotatable{
         super(centrePoint.getX(),centrePoint.getY(),Color.black,true,calculateBB(points));
         this.points = points;
     }
+    public Quadrilateral(Point centrePoint, Point[] points,Color color){
+        super(centrePoint.getX(),centrePoint.getY(),color,true,calculateBB(points));
+        this.points = points;
+    }
 
     public Quadrilateral(Point centrePoint, Point p1, Point p2, Point p3, Point p4){
         super(centrePoint.getX(),centrePoint.getY(),Color.black,true,calculateBB(p1,p2,p3,p4));
+        this.points = new Point[4];
+        this.points[0]=p1;
+        this.points[1]=p2;
+        this.points[2]=p3;
+        this.points[3]=p4;
+    }
+
+    public Quadrilateral(Point centrePoint, Point p1, Point p2, Point p3, Point p4,Color color){
+        super(centrePoint.getX(),centrePoint.getY(),color,true,calculateBB(p1,p2,p3,p4));
         this.points = new Point[4];
         this.points[0]=p1;
         this.points[1]=p2;

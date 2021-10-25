@@ -5,6 +5,13 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+/**
+ * ShapesManager is the class that controls the correct displaying of the figures.
+ * It contains an array of figures and two booleans that decides if the names and the bounding boxes
+ * will be displayed.
+ * It's not possible to change these settings during run-time, only at compiling time.
+ * @author Gabriel La Loggia - L00169720
+ */
 public class ShapesManager {
 
     private ArrayList<Shape> shapes;

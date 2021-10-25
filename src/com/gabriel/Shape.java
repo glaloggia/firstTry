@@ -2,6 +2,11 @@ package com.gabriel;
 
 import java.awt.*;
 
+/**
+ * Shape is an abstract class that contains the basic and common traits of every type of shape:
+ * Color, Center Point, isFilled, and a bounding box.
+ * @author Gabriel La Loggia - L00169720
+ */
 public abstract class Shape {
     protected Color color;
     protected boolean isFilled;

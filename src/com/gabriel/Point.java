@@ -1,5 +1,9 @@
 package com.gabriel;
 
+/**
+ * Point is a class that it's used to create coordinates to locate points on the screen.
+ * @author Gabriel La Loggia - L00169720
+ */
 public class Point {
     private int x;
     private int y;
