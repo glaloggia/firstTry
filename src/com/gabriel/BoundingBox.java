@@ -1,7 +1,5 @@
 package com.gabriel;
 
-import java.awt.*;
-
 /**
  * BoundingBox is a class that creates a rectangular border in every shape, and it is used to detect
  * collisions and intersections. It can be drawn or hidden from the view.
@@ -12,13 +10,15 @@ public class BoundingBox{
     private Point bottomLeft;
     private Point topRight;
 
+    /**
+     * Constructor, initializes the object
+     * @param bottomLeft specifies the 2 coords(x,y) for the bottom-left corner
+     * @param topRight speficies the 2 coords(x,y) for the top-right corner
+     * @see Point
+     */
     public BoundingBox(Point bottomLeft,Point topRight){
         this.bottomLeft = bottomLeft;
         this.topRight = topRight;
-    }
-
-    public BoundingBox(Point[] points){
-
     }
 
     public Point getBottomLeft() {

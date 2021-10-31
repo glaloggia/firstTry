@@ -9,16 +9,72 @@ import java.awt.*;
  */
 public abstract class Shape {
     protected Color color;
+    /**
+     * isFilled is a boolean that decides if the shape will be filled or just the outline
+     */
     protected boolean isFilled;
+    /**
+     * xCenter and yCenter are pair of coords pointing the center of the shape.
+     */
     protected int xCenter, yCenter;
+    /**
+     * boundingBox it's used for intersections
+     * @see BoundingBox
+     */
     protected BoundingBox boundingBox;
 
+    /**
+     * Constructor
+     * @param xCenter x coord for the center of the shape
+     * @param yCenter y coord for the center of the shape
+     * @param color color of the outline or the filling
+     * @param isFilled boolean that decides if the shape will be filled or not
+     * @param boundingBox every shape must have a bounding box
+     */
     public Shape(int xCenter, int yCenter,Color color, boolean isFilled,BoundingBox boundingBox ) {
         this.color = color;
         this.isFilled = isFilled;
         this.xCenter = xCenter;
         this.yCenter = yCenter;
         this.boundingBox = boundingBox;
+    }
+
+    /**
+     * drawShape have to be implemented in every shape
+     * @param g is the graphical context
+     */
+    public abstract void drawShape(Graphics g);
+
+    /**
+     * toggleFilling is a public method that switch on/off the filling in the shape
+     */
+    public void toggleFilling(){
+        this.isFilled = !this.isFilled;
+    }
+
+    /**
+     * moveOrRotate is an abstract method that need to be defined in every shape
+     */
+    public abstract void moveOrRotate();
+
+    /**
+     * displayName is invoked by the shapes manager
+     * @param g is the graphical context
+     * @see ShapesManager
+     */
+    public void displayName(Graphics g) {
+        g.setColor(Color.black);
+        g.drawString(this.toString(),this.getBoundingBox().getBottomLeft().getX(),this.boundingBox.getBottomLeft().getY());
+    }
+
+    /**
+     * displayBoundingBox is invoked by the shapes manager
+     * @param g is the graphical context
+     * @see ShapesManager
+     */
+    public void displayBoundingBox(Graphics g) {
+        g.setColor(Color.black);
+        g.drawRect(boundingBox.getBottomLeft().getX(),boundingBox.getBottomLeft().getY(),boundingBox.getTopRight().getX()-boundingBox.getBottomLeft().getX(),boundingBox.getTopRight().getY()-boundingBox.getBottomLeft().getY());
     }
 
     public Color getColor() {
@@ -61,21 +117,4 @@ public abstract class Shape {
         this.boundingBox = boundingBox;
     }
 
-    public abstract void drawShape(Graphics g);
-
-    public void toggleFilling(){
-        this.isFilled = !this.isFilled;
-    }
-
-    public abstract void moveOrRotate();
-
-    public void displayName(Graphics g) {
-        g.setColor(Color.black);
-        g.drawString(this.toString(),this.getBoundingBox().getBottomLeft().getX(),this.boundingBox.getBottomLeft().getY());
-    }
-
-    public void displayBoundingBox(Graphics g) {
-        g.setColor(Color.black);
-        g.drawRect(boundingBox.getBottomLeft().getX(),boundingBox.getBottomLeft().getY(),boundingBox.getTopRight().getX()-boundingBox.getBottomLeft().getX(),boundingBox.getTopRight().getY()-boundingBox.getBottomLeft().getY());
-    }
 }

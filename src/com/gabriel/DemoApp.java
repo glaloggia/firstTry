@@ -5,6 +5,8 @@ import java.awt.*;
 
 /**
  * DemoApp is an example that uses all the classes developed for this assignment.
+ * First, creates the shapes container, ShapesManager.
+ * Then adds some shapes, and finally, set a window, to contain all the elements for a GUI.
  * @author Gabriel La Loggia - L00169720
  */
 public class DemoApp {

@@ -8,6 +8,16 @@ public class Point {
     private int x;
     private int y;
 
+    /**
+     * Constructor, initializes the object.
+     * @param x an integer with the X coord
+     * @param y an integer with the Y coord
+     */
+    public Point(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+
     public void setX(int x) {
         this.x = x;
     }
@@ -16,10 +26,6 @@ public class Point {
         this.y = y;
     }
 
-    public Point(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
 
     public int getX() {
         return x;

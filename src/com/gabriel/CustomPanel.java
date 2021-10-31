@@ -4,8 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
+/**
+ * CustomPanel is the container for all the GUI elements of the application.
+ * Includes the shapes manager, which is in charge of interacting with all the shapes.
+ * Also, it handles the mouse interactions.
+ * @see ShapesManager
+ * @author Gabriel La Loggia - L00169720
+ */
 public class CustomPanel extends JPanel {
 
     private ShapesManager shapesManager;
